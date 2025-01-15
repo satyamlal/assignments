@@ -44,12 +44,13 @@ function signJwt(username, password) {
  */
 function verifyJwt(token) {
   // Your code here
+  ans = true;
   try {
     jwt.verify(token, jwtPassword);
-    return true;
   } catch (err) {
-    return false;
+    ans = false;
   }
+  return ans;
 }
 
 /**
