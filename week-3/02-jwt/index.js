@@ -47,7 +47,7 @@ function verifyJwt(token) {
   try {
     jwt.verify(token, jwtPassword);
     return true;
-  } catch (e) {
+  } catch (err) {
     return false;
   }
 }
@@ -64,6 +64,7 @@ function decodeJwt(token) {
   // Your code here
   return !!jwt.decode(token);
 }
+//Another way is to use arrow function along with a ternary operator
 //const decoded = (token) => jwt.decode(token) ? true : false;
 
 module.exports = {
